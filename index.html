@@ -17,11 +17,12 @@
 	<meta property="og:image" content="https://godotengine.org/assets/share-image.jpg">
 	<meta property="og:type" content="website">
 	<meta name="twitter:card" content="summary_large_image"> -->
-	<title>Godot Engine - Free and open source 2D and 3D game engine</title>
+	<title>SpaceJam - Godot Engine</title>
+	<link rel="icon" href="/assets/favicon.png" sizes="any">
+	<link rel="icon" href="https://www.retrogames.cz/grafika/ovladace/NES_gamepad.gif
+	" type="image/svg+xml">
 
 	<!-- <link rel="alternate" type="application/rss+xml" title="Godot News" href="/rss.xml">
-	<link rel="icon" href="/assets/favicon.png" sizes="any">
-	<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="/assets/css/main.css?109">
 	<link rel="stylesheet" href="/assets/css/tobii.min.css">
 	<link rel="preload" as="font" href="/assets/fonts/Montserrat-Bold.woff2" crossorigin>
@@ -38,8 +39,8 @@
 	<div class="container flex align-center">
 		<div id="nav_head">
 			<a href="/" id="logo-link">
-				<img class="nav-logo" src="/assets/logo.svg" width="136" height="48" alt="Godot Engine">
-				<img class="nav-logo dark-logo" src="/assets/logo_dark.svg" width="136" height="48" alt="Godot Engine">
+				<img class="nav-logo" src="./ativos/naveSemFundo.png" width="76" height="48" alt="Nave">
+				<img class="nav-logo dark-logo" src="./ativos/naveSemFundo.png" width="76" height="48" alt="Nave">
 			</a>
 			<label for="nav_toggle_cb" id="nav_toggle_btn">
 				<img src="/assets/icons/hamburger.svg" width="24" height="24" alt="Main menu">
@@ -48,22 +49,24 @@
 
 		<nav id="nav">
 			<ul class="left">
-				<li><a href="/features">Features</a></li>
+				<li><a href="#">-</a></li>
 				<div class="only-on-mobile" style="width: 100%">
-					<li><a href="/showcase">Showcase</a></li>
+					<li><a href="#">Showcase</a></li>
 				</div>
-				<li><a href="/blog">Blog</a></li>
-				<li><a href="/community">Community</a></li>
-				<li><a href="/contact">About</a></li>
-				<li><a href="https://godotengine.org/asset-library/asset">Assets</a></li>
+				<li><a href="#">-</a></li>
+				<li><a href="#">-</a></li>
+				<li><a href="#">-</a></li>
+				<li><a href="#">-</a></li>
 			</ul>
 
 			<ul class="right">
-				<li><a href="/download/windows" class="set-os-download-url">Download</a></li>
-				<li><a href="https://docs.godotengine.org">Learn</a></li>
-				<li><a href="https://docs.godotengine.org/en/stable/community/contributing/index.html">Contribute</a></li>
+				<li><a href="#" id="logo-link">
+					<img class="nav-logo dark-logo" src="./ativos/nave2SemFundo.png" width="76" height="48" alt="Nave">
+				</a></li>
+				<li><a href="#">Sobre</a></li>
+				<li><a href="#">Integrantes</a></li>
 				
-				<li class="fund"><a href="https://fund.godotengine.org">❤&#xFE0E; Donate</a></li>
+				<li class="fund"><a href="#">❤&#xFE0E; Mais</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -74,6 +77,142 @@
 
 <link rel="stylesheet" href="/assets/css/transparent-nav.css">
 <style>
+		body {
+		background-color: var(--background-color);
+	}
+
+	h1 {
+		margin-bottom: 8px;
+		margin-top: 32px;
+	}
+
+	:not(pre)>code {
+		background: var(--code-background-color);
+		padding: 1px 4px;
+		font-size: 0.95em;
+		border-radius: 3px;
+	}
+
+	pre {
+		background: var(--codeblock-background-color);
+		color: var(--codeblock-color);
+	}
+
+	pre code {
+		display: block;
+		overflow-x: auto;
+		padding: .5em;
+	}
+
+	.date-big {
+		line-height: 2;
+		margin-left: 32px;
+	}
+
+	article {
+		background-color: var(--base-color);
+		box-shadow: 0px 3px 2px 0px rgba(0, 0, 0, 0.15);
+	}
+
+	figure {
+		margin: 0;
+	}
+
+	figure img {
+		margin: 0;
+	}
+
+	article img,
+	article video {
+		max-width: 100%;
+		height: auto;
+		display: block;
+		margin: auto;
+		margin-top: 16px;
+		margin-bottom: 16px;
+	}
+
+	article h1 {
+		margin-top: 64px;
+	}
+
+	article h2,
+	article h3,
+	article h4 {
+		margin-top: 42px;
+	}
+
+	.article-info {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.article-metadata {
+		display: flex;
+		gap: 24px;
+		align-items: center;
+		font-family: var(--header-font-family);
+		margin-bottom: 12px;
+	}
+
+	@media (max-width: 900px) {
+		.article-metadata {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 16px;
+		}
+	}
+
+	.article-author {
+		color: var(--base-color-text-subtitle-date);
+		font-weight: 700;
+		font-size: 18px;
+		flex-grow: 1;
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.article-author .avatar {
+		border-radius: 100%;
+		margin: 0;
+	}
+
+	.article-author .by {
+		color: var(--base-color-text-subtitle);
+	}
+
+	.article-metadata .date {
+		color: var(--base-color-text-subtitle-date);
+	}
+
+	.tag.active {
+		filter: saturate(0.75);
+	}
+
+	@media screen and (min-width: 900px) {
+		article .content {
+			width: 70%;
+			margin: auto;
+		}
+	}
+
+	@media (max-width: 900px) {
+		body {
+			background-color: var(--base-color);
+		}
+
+		article {
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		article img:first-child,
+		article video:first-child {
+			max-width: 100%;
+		}
+	}
 	.main-download {
 		display: flex;
 		align-items: flex-start;
@@ -228,10 +367,25 @@
 </style>
 
 <section class="hero">
+	
 	<div class="background-image" style="background-image: url()"></div>
 	<div class="wrapper">
-		<div class="copy container">
-			<h1>The game engine you've been waiting&nbsp;for.</h1>
+		<div class="article-cover">
+				
+			<figcaption style="opacity: 0.8; line-height: 1.5">
+				<strong>Nome do Jogo</strong>
+				<span style="margin-left: 0.75rem; font-size: 90%">(Nome do jogo) é um game feito pela (nomeGrupo)</span>
+			</figcaption>
+			
+
+			<img src="https://1.bp.blogspot.com/-KVNtMU5Nnrk/
+				YCsA-6xVSBI/AAAAAAAAAWA/sJI0NXi9LLwwXUx_Z_yqgqtNX
+				sSl2DRsgCLcBGAsYHQ/s1366/screenshot%2B3.jpg" title="SpaceSlog"
+				alt="(Nome do jogo) é um game feito pela (nomeGrupo)" class="rounded-lg"
+				style="width: 100%; height: auto" />
+		</div>
+		<!-- <div class="copy container">
+			<h1>Esse game The game engine you've been waiting&nbsp;for.</h1>
 			<p>The Godot Engine is a free, all-in-one, cross-platform game engine that makes it easy for you to create 2D and
 				3D games.</p>
 
@@ -255,25 +409,26 @@
 
 				<a href="/features" class="btn btn-flat btn-flat-white btn-flat-frosted btn-hero-learn-more">Learn more</a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div class="credits">
-		<a href=""><span class="game"></span> <span class="by" style="opacity: 0.6;"></span></a>
+		<!-- <a href="#"><span class="game"></span> <span class="by" style="opacity: 0.6;"></span></a> -->
+		<div><span class="game">Jogo feito por (nome)</span></div>
 	</div>
 </section>
 
 <section class="container padded">
-	<h2>Latest news</h2>
+	<h2>Novidades</h2>
 	<div class="flex eqsize responsive" style="gap: 30px;">
 
 		
 		
-		<a href="/article/dev-snapshot-godot-4-2-beta-6/" style="text-decoration: none">
+		<a href="#" style="text-decoration: none">
 			<article class="article-card">
-				<div class="thumbnail" style="background-image: url('/storage/blog/covers/dev-snapshot-godot-4-2-beta-6.webp');"></div>
+				<div class="thumbnail" style="background-image: url('https://i.ytimg.com/vi/wmbtRW0noRw/maxresdefault.jpg');"></div>
 				<div class="content">
-					<h3>Dev snapshot: Godot 4.2 beta 6</h3>
-					<p class="excerpt">We're almost ready for a release candidate! This 6th beta fixes a number of regressions via some relatively core changes which will need thorough testing.</p>
+					<h3>Game Beta: Godot 3.5</h3>
+					<p class="excerpt">Jogo Desenvolvido na Engine Godot 3.5</p>
 				</div>
 			</article>
 		</a>
@@ -285,42 +440,39 @@
 				
 				<a href="/article/dev-snapshot-godot-4-2-beta-5/" style="text-decoration: none;">
 					<article class="article-card row">
-						<div class="thumbnail" style="background-image: url('/storage/blog/covers/dev-snapshot-godot-4-2-beta-5.webp');" href="/article/dev-snapshot-godot-4-2-beta-5/"></div>
+						<div class="thumbnail" style="background-image: url('https://i.ytimg.com/vi/wmbtRW0noRw/maxresdefault.jpg');" href="#"></div>
 						<div>
-							<h3>Dev snapshot: Godot 4.2 beta 5</h3>
-							<p class="excerpt">More critical fixes are coming your way on the road to Godot 4.2 stable, including smoother transiti...</p>
+							<h3>Nova Versão: Godot 3.5 beta 2.0</h3>
+							<p class="excerpt">Correção de bugs</p>
 						</div>
 					</article>
 				</a>
-				
-				
-				
-				<a href="/article/maintenance-release-godot-4-1-3/" style="text-decoration: none;">
+
+				<a href="/article/dev-snapshot-godot-4-2-beta-5/" style="text-decoration: none;">
 					<article class="article-card row">
-						<div class="thumbnail" style="background-image: url('/storage/blog/covers/maintenance-release-godot-4-1-3.webp');" href="/article/maintenance-release-godot-4-1-3/"></div>
+						<div class="thumbnail" style="background-image: url('https://i.ytimg.com/vi/wmbtRW0noRw/maxresdefault.jpg');" href="#"></div>
 						<div>
-							<h3>Maintenance release: Godot 4.1.3</h3>
-							<p class="excerpt">With stability in mind, Godot contributors offer yet another set of changes for Godot 4.1 users, add...</p>
+							<h3>Nova Versão: Godot 3.5 beta 2.0</h3>
+							<p class="excerpt">Correção de bugs</p>
 						</div>
 					</article>
 				</a>
-				
-				
-				
-				<a href="/article/dev-snapshot-godot-4-2-beta-4/" style="text-decoration: none;">
+
+				<a href="/article/dev-snapshot-godot-4-2-beta-5/" style="text-decoration: none;">
 					<article class="article-card row">
-						<div class="thumbnail" style="background-image: url('/storage/blog/covers/dev-snapshot-godot-4-2-beta-4.webp');" href="/article/dev-snapshot-godot-4-2-beta-4/"></div>
+						<div class="thumbnail" style="background-image: url('https://i.ytimg.com/vi/wmbtRW0noRw/maxresdefault.jpg');" href="#"></div>
 						<div>
-							<h3>Dev snapshot: Godot 4.2 beta 4</h3>
-							<p class="excerpt">We continue iterating quickly on beta snapshots for Godot 4.2 to ensure that we can solve regression...</p>
+							<h3>Nova Versão: Godot 3.5 beta 2.0</h3>
+							<p class="excerpt">Correção de bugs</p>
 						</div>
 					</article>
 				</a>
+											
 				
 				
-				<div class="button-container">
+				<!-- <div class="button-container">
 					<a href="/blog" class="btn no-margin">More News</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
