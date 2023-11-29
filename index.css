@@ -35,7 +35,7 @@
   
     --big-button-color: #478cbf;
   
-    --fund-color: #ef6767;
+    --fund-color: #500aa0;
     --fund-color-hl: #e53e3e;
     --fund-color-faint: #ff9d9d;
   
@@ -1400,6 +1400,7 @@
     border-radius: 7px;
     box-sizing: border-box;
   }
+  
   
   .sponsor-card.patron {
     background-color: var(--sponsor-patron-background-color);
